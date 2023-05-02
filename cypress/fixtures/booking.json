@@ -1,0 +1,11 @@
+{
+  "booking": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "animal_name": "Buddy",
+    "animal_type": "cat",
+    "hours_requested": 5,
+    "date_of_service": "2023-05-15"
+  },
+  "fixed_cost": 20
+}

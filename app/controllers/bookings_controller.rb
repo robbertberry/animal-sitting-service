@@ -11,14 +11,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = current_user.bookings.new(booking_params)
-    
-    if @booking.save 
-       redirect_to bookings_path, success: 'Booking added successfully!'
-    else 
-       flash[:error] = 'Some error occured!'
 
-       render :new
-    end    
+    if @booking.save
+      redirect_to bookings_path, flash: { success: 'Booking added successfully!' }
+    else
+      flash[:error] = 'Some error occured!'
+
+      render :new
+    end
   end
 
   private

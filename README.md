@@ -5,6 +5,7 @@
 - Ruby 3.1.2
 - Ruby on Rails 7.0.4
 - Sqlite3
+- Cypress 9.6.0
 - Application Server: Puma
 - Component Library from Tailwind + Flowbite https://flowbite.com/docs/getting-started/introduction/
 
@@ -47,5 +48,24 @@ Before you get started, the following needs to be installed:
 5.  Run server:
 
     `rails server` or `rails s`
+
+6.  Testing:
+
+    Run unit test cases 
+    
+    ```
+    rspec
+    ```
+
+    Feature test cases:
+
+    To install Cypress use: `npm install cypress@9.6.0`
+
+    
+    To run test cases use: `npx cypress open`
+
+    OR
+
+    `npx cypress run`
 
 Congratulations! cards should now be up and running for development purposes on http://localhost:3000/
