@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+.form-width {
+  width: 384px;
+  align-items: center;
+  justify-content: center;
+}

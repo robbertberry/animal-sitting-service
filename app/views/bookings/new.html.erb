@@ -1,0 +1,47 @@
+<div class="flex" style="justify-content: center;">
+    <div class='flex flex-col' style="align-items: center">
+        <h1 class="">Create Booking</h1>
+        <%= form_with model: @booking, data: { turbo: false } do |form| %>
+            <% if @booking.errors.any? %>
+                <% @booking.errors.full_messages.each do |message|%>
+                    <% flash[:error] = message %>
+                    <%= render 'layouts/flash', locals: {flash: flash} %>
+                <%end%>
+            <%end%>
+            
+            <div class='form-width mb-6 content-start gap-4 items-end'>
+                <div class='w-full'>
+                    <%= form.label :first_name, class: 'block font-bold mr-5 mb-2 text-sm text-gray-900' %>
+                    <%= form.text_field :first_name, class: 'mr-5 input-field', autofocus: true, required: true %>
+                </div>
+
+                <div class='w-full'>
+                    <%= form.label :last_name, class: 'block font-bold mr-5 mb-2 text-sm text-gray-900' %>
+                    <%= form.text_field :last_name, class: 'mr-5 input-field', required: true %>
+                </div>
+
+                <div class='w-full'>
+                    <%= form.label :animal_type, class: 'block font-bold mr-5 mb-2 text-sm text-gray-900' %>
+                    <%= form.select :animal_type, [['Cat', 'cat'], ['Dog', 'dog']], { prompt: true }, class: 'mr-5 dropdown-select' %>
+                </div>
+
+                <div class='w-full'>
+                    <%= form.label :animal_name, class: 'block font-bold mr-5 mb-2 text-sm text-gray-900' %>
+                    <%= form.text_field :animal_name, class: 'mr-5 input-field', required: true %>
+                </div>
+
+                <div class='w-full'>
+                    <%= form.label :hours_requested, class: 'block font-bold mr-5 mb-2 text-sm text-gray-900' %>
+                    <%= form.number_field :hours_requested, class: 'mr-5 input-field', required: true %>
+                </div>
+
+                <div class='w-full'>
+                    <%= form.label :date_of_service, class: 'block font-bold mr-5 mb-2 text-sm text-gray-900' %>
+                    <%= form.date_field :date_of_service, class: 'mr-5 input-field', min: Date.today, required: true %>
+                </div>
+
+                <%= button_tag "Create", class: 'btn-primary mt-5 w-full' %>
+            </div>
+        <% end %>
+    </div>
+</div>
